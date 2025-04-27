@@ -1,7 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router";
-import Home from "./pages/Home/Home.jsx";
-import Favorites from "./pages/Favorites/Favorites.jsx";
-import Details from "./pages/Details/Details.jsx";
+import Router from "./routes/Router";
 
 function App() {
 
@@ -18,14 +15,9 @@ function App() {
             </header>
 
             <div>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/details/:id" element={<Details />} />
-                        <Route path="/favorites" element={<Favorites />} />
-                    </Routes>
-                </BrowserRouter>
+                <Router />
             </div>
+            
             <footer className="bg-gray-200 p-4">
                 <p className="text-center">Recetas App &copy; 2023</p>
 
