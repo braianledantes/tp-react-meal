@@ -1,9 +1,19 @@
 import { useParams } from 'react-router'
 import useMeal from '../../hooks/useMeal'
+import useFavorites from '../../hooks/useFavorites';
 
 export default function Details() {
     const { id } = useParams()
     const { meal, loading, error } = useMeal({ id })
+    const { addFavorite, removeFavorite, isFavorite } = useFavorites();
+
+    const handleFavoriteClick = () => {
+        if (isFavorite(id)) {
+            removeFavorite(id);
+        } else {
+            addFavorite(id); 
+        }
+    };
 
     return (
         <>
@@ -21,6 +31,13 @@ export default function Details() {
                         {meal.strIngredient4 && <li>{meal.strIngredient4}</li>}
                         {meal.strIngredient5 && <li>{meal.strIngredient5}</li>}
                     </ul>
+
+                    <button
+                        onClick={handleFavoriteClick}
+                        className={`favorite-btn ${isFavorite(id) ? 'is-favorite' : ''}`}
+                    >
+                        {isFavorite(id) ? 'Quitar de favoritos' : 'Añadir a favoritos'}
+                    </button>
                 </div>
             )}
         </>

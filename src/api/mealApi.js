@@ -15,10 +15,15 @@ export async function searchMealsByName(name) {
  * @param {string} id
  */
 export async function getMealById(id) {
-  const response = await fetch(`${BASE_URL}/lookup.php?i=${id}`);
-  const data = await response.json();
-  return data.meals?.[0];
-}
+    try {
+      const response = await fetch(`${BASE_URL}/lookup.php?i=${id}`);
+      const data = await response.json();
+      return data.meals?.[0] || null;
+    } catch (error) {
+      console.error("Error fetching meal by ID:", error);
+      return null;
+    }
+  }
 
 /**
  * Obtener todas las categorías
