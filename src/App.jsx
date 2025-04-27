@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import Home from "./pages/Home.jsx";
-import Favorites from "./pages/Favorites.jsx";
-import Details from "./pages/Details.jsx";
+import Home from "./pages/Home/Home.jsx";
+import Favorites from "./pages/Favorites/Favorites.jsx";
+import Details from "./pages/Details/Details.jsx";
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
                 </nav>
             </header>
 
-            <div className="h-[200vh]">
+            <div>
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<Home />} />
