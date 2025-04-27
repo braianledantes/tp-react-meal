@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { getMealById } from "../api/mealApi";
 
 const useMeal = ({ id }) => {
     const [meal, setMeal] = useState(null)
@@ -7,11 +8,8 @@ const useMeal = ({ id }) => {
 
     const fetchMeal = async () => {
         try {
-            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-
-            const data = await response.json()
-            setMeal(data.meals[0])
-
+            const data= await getMealById(id);
+            setMeal(data)
             setLoading(false)
         } catch (error) {
             setError(error)
@@ -21,7 +19,7 @@ const useMeal = ({ id }) => {
 
     useEffect(() => {
         fetchMeal()
-    }, [])
+    }, [id])
 
     return { meal, loading, error }
 }

@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { searchMealsByName } from "../api/mealApi";
 
 const useMeals = () => {
     const [meals, setMeals] = useState([])
@@ -7,10 +8,8 @@ const useMeals = () => {
 
     const fetchMeal = async () => {
         try {
-            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=`)
-
-            const data = await response.json()
-            setMeals(data.meals)
+            const data = await searchMealsByName("");
+            setMeals(data)
 
             setLoading(false)
         } catch (error) {
