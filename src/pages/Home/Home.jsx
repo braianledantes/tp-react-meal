@@ -1,8 +1,8 @@
-import useMeals from "../../hooks/useMeals";
 import { Link } from "react-router";
+import useMeals from "../../hooks/useMeals";
 
 export default function Home() {
-    const { meals, loading, error } = useMeals()
+    const { meals, loading, error } = useMeals(); 
 
     return (
         <>

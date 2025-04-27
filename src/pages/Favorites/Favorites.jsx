@@ -34,23 +34,23 @@ export default function FavoritesPage() {
     }
 
     return (
-        <div>
-            <h2>Comidas Favoritas</h2>
-            <div className="favorites-list">
-                {meals.map((meal) => ( 
-                   meal ? ( 
-                    <div key={meal.idMeal} className="favorite-item">
-                        <Link to={`/meal/${meal.idMeal}`}>
-                            <img src={meal.strMealThumb} alt={meal.strMeal} className="favorite-item-img" />
-                            <h3>{meal.strMeal}</h3>
-                        </Link>
-                         <button onClick={() => removeFavorite(meal.idMeal)} className="remove-btn">
-                            Eliminar de favoritos
-                        </button>
-                    </div>
-                  ) : null
-                ))}
-            </div>
-        </div>
+      <div>
+          <h2>Comidas Favoritas</h2>
+          <div className="favorites-list">
+              {meals.map((meal) => ( 
+                 meal ? ( 
+                  <div key={meal.idMeal} className="favorite-item">
+                      <Link to={`/details/${meal.idMeal}`}>
+                          <img src={meal.strMealThumb} alt={meal.strMeal} className="favorite-item-img" />
+                          <h3>{meal.strMeal}</h3>
+                      </Link>
+                       <button onClick={() => removeFavorite(meal.idMeal)} className="remove-btn">
+                          Eliminar de favoritos
+                      </button>
+                  </div>
+                ) : null
+              ))}
+          </div>
+      </div>
     );
 }
