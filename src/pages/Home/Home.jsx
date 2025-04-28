@@ -1,23 +1,27 @@
-import { Link } from "react-router";
 import useMeals from "../../hooks/useMeals";
+import MealCard from "../../components/MealCard/MealCard";
+import useFavorites from "../../hooks/useFavorites";
 
 export default function Home() {
     const { meals, loading, error } = useMeals(); 
+    const { isFavorite, removeFavorite, addFavorite } = useFavorites();
+
+    const handleClickFavorites = (id) => {
+        if (isFavorite(id)) {
+            removeFavorite(id);
+        } else {
+            addFavorite(id);
+        }
+    }
 
     return (
         <>
             {loading && <h1>Loading...</h1>}
             {error && <h1>{error.message}</h1>}
             {meals && (
-                <div className="grid grid-cols-3 gap-4 p-4">
+                <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] bg-red-50  gap-3 justify-center p-4 max-w-[1000px] mx-auto">
                     {meals.map((meal) => (
-                        <div key={meal.idMeal} className="bg-white shadow-md rounded-lg p-4">
-                            <Link to={`/details/${meal.idMeal}`}>
-                                <img src={meal.strMealThumb} alt={meal.strMeal} className="w-full h-48 object-cover rounded-t-lg" />
-                                <h2 className="text-xl font-bold mt-2">{meal.strMeal}</h2>
-                            </Link>
-                            <p className="text-gray-600">{meal.strCategory}</p>
-                        </div>
+                        <MealCard key={meal.idMeal} id={meal.idMeal} image={meal.strMealThumb} title={meal.strMeal} isFav={isFavorite(meal.idMeal)} onClickFavorites={handleClickFavorites} />
                     ))}
                 </div>
             )}
