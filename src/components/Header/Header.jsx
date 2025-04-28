@@ -8,7 +8,7 @@ const Header = ({
     handleSearchChange,
   }) => {
     return (
-      <header className="flex items-center justify-between bg-amber-700 text-white p-4 sticky top-0">
+      <header className="flex items-center justify-between bg-amber-700 text-white p-4 sticky top-0 z-40 shadow-md">
         <h1 className="text-3xl font-bold"><Link to={PATHS.HOME}>Recetas</Link></h1>
         <div>
           <Search searchTerm={searchTerm} onSearchChange={handleSearchChange} />
