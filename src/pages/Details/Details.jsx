@@ -12,9 +12,15 @@ export default function Details() {
         if (isFavorite(id)) {
             removeFavorite(id);
         } else {
-            addFavorite(id); 
+            addFavorite(id);
         }
     };
+
+    const getEmbedYoutubeVideo = () => {
+        const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+        const match = meal.strYoutube.match(regex);
+        return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+    }
 
     return (
         <>
@@ -25,6 +31,7 @@ export default function Details() {
             {error && <h1>{error.message}</h1>}
             {meal && (
                 <div>
+                    <iframe width="560" height="315" src={getEmbedYoutubeVideo()} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                     <img src={meal.strMealThumb} alt={meal.strMeal} />
                     <h2>{meal.strMeal}</h2>
                     <p>{meal.strInstructions}</p>
