@@ -1,13 +1,16 @@
+import { useTranslation } from 'react-i18next';
 import styles from './Search.module.css';
 import { Search as SearchIcon } from 'lucide-react';
 
 export default function Search({ searchTerm, onSearchChange }) {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.buscadorContenedor}  >
       <SearchIcon className={styles.SearchIcon} />
       <input
         type="text"
-        placeholder="Buscar postrecito ñom ñom"
+        placeholder={t('search-placholder')}
         value={searchTerm}
         onChange={(e) => onSearchChange(e.target.value)}
         className={styles.buscador}
