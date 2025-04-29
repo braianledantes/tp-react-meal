@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import useFavorites from '../../hooks/useFavorites';
 import { getMealById } from '../../api/mealApi';
+import PATHS from '../../routes/paths';
 
 export default function FavoritesPage() {
     const { favorites, removeFavorite } = useFavorites();
@@ -15,6 +16,7 @@ export default function FavoritesPage() {
               favorites.map(async (mealId) => {
                 const meal = await getMealById(mealId);
                 if (meal) {
+                  meal.detailUrl = PATHS.DETAILS.replace(':id', mealId);
                   return meal;
                 }
                 return null;
@@ -40,7 +42,7 @@ export default function FavoritesPage() {
               {meals.map((meal) => ( 
                  meal ? ( 
                   <div key={meal.idMeal} className="favorite-item">
-                      <Link to={`/details/${meal.idMeal}`}>
+                      <Link to={meal.detailUrl}>
                           <img src={meal.strMealThumb} alt={meal.strMeal} className="favorite-item-img" />
                           <h3>{meal.strMeal}</h3>
                       </Link>
