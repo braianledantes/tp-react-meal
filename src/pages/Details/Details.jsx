@@ -1,6 +1,7 @@
 import { useParams } from 'react-router'
 import useMeal from '../../hooks/useMeal'
 import useFavorites from '../../hooks/useFavorites';
+import CircleProgressBar from '../../components/CircleProgressBar/CircleProgressBar';
 
 export default function Details() {
     const { id } = useParams()
@@ -17,7 +18,10 @@ export default function Details() {
 
     return (
         <>
-            {loading && <h1>Loading...</h1>}
+            {loading &&
+                <div className='flex justify-center items-center h-full'>
+                    <CircleProgressBar />
+                </div>}
             {error && <h1>{error.message}</h1>}
             {meal && (
                 <div>
