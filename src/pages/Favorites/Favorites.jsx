@@ -4,11 +4,18 @@ import { Link } from 'react-router';
 import useFavorites from '../../hooks/useFavorites';
 import { getMealById } from '../../api/mealApi';
 import PATHS from '../../routes/paths';
+import Search from "../../components/Search/Search";
+
 
 export default function FavoritesPage() {
+    const [searchTerm, setSearchTerm] = useState("");
     const { favorites, removeFavorite } = useFavorites();
     const [meals, setMeals] = useState([]);
 
+    const filteredMeals = meals.filter((meal) =>
+      meal.strMeal.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    
     useEffect(() => {
         const fetchMeals = async () => {
           try {
@@ -38,8 +45,12 @@ export default function FavoritesPage() {
     return (
       <div>
           <h2>Comidas Favoritas</h2>
+          <Search searchTerm={searchTerm} onSearch={setSearchTerm} />
+            {filteredMeals.length === 0 ? (
+              <p>No se encontró ninguna receta guardada con ese nombre.</p>
+            ) : (
           <div className="favorites-list">
-              {meals.map((meal) => ( 
+              {filteredMeals.map((meal) => (
                  meal ? ( 
                   <div key={meal.idMeal} className="favorite-item">
                       <Link to={meal.detailUrl}>
@@ -53,6 +64,7 @@ export default function FavoritesPage() {
                 ) : null
               ))}
           </div>
+            )}
       </div>
     );
 }
