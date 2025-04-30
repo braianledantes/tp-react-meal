@@ -26,7 +26,7 @@ export default function Details() {
     }
 
     return (
-        <section>
+        <section className="bg-sweetPeach">
             {loading &&
                 <div className='flex justify-center items-center h-full'>
                     <CircleProgressBar />
