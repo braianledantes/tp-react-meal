@@ -9,7 +9,7 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainLayout />}>
+        <Route path={PATHS.HOME} element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path={PATHS.FAVORITES} element={<Favorites />} />
           <Route path={PATHS.DETAILS} element={<Details />} />
