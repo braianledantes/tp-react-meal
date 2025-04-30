@@ -1,12 +1,20 @@
-# React + Vite
+## Esquema de íconos para los commits
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Ícono | Tipo de Cambio | Descripción |
+| --- | --- | --- |
+| ✨ (`:sparkles:`) | **Nueva Funcionalidad** | Agregar una nueva característica o funcionalidad. |
+| 🐛 (`:bug:`) | **Corrección de Errores** | Resolver un bug o problema reportado. |
+| ♻️ (`:recycle:`) | **Refactorización** | Mejorar el código sin cambiar su funcionalidad (reorganización o limpieza). |
+| 📝 (`:memo:`) | **Documentación** | Cambios o adiciones en la documentación del proyecto. |
+| 🎨 (`:art:`) | **Mejoras de Estilo** | Ajustes relacionados con el formato o estilo del código (p. ej., indentación). |
+| 🔧 (`:wrench:`) | **Configuración** | Cambios en archivos de configuración (p. ej., `.env`, `package.json`). |
+| 🚀 (`:rocket:`) | **Optimización** | Mejoras en el rendimiento o en el tiempo de ejecución. |
+| 🔥 (`:fire:`) | **Eliminación de Código** | Quitar código o archivos innecesarios. |
+| ✅ (`:white_check_mark:`) | **Tests** | Añadir o modificar tests automatizados. |
+| 🚑️ (`:ambulance:`) | **Hotfix** | Correcciones urgentes en producción. |
+| 🐎 (`:horse_racing:`) | **Performance** | Cambios para mejorar el rendimiento del sistema. |
+| 🛠️ (`:hammer_and_wrench:`) | **Mantenimiento** | Tareas de mantenimiento general (p. ej., actualización de dependencias). |
+| 📦️ (`:package:`) | **Dependencias** | Cambios relacionados con dependencias (p. ej., instalación o actualización). |
+| ⚙️ (`:gear:`) | **Infraestructura** | Cambios en la infraestructura del proyecto (p. ej., CI/CD, Docker). |
+| 🌐 (`:globe_with_meridians:`) | **Internacionalización** | Cambios en soporte de idiomas o localización. |
+| 💄 (`:lipstick:`) | **UI/UX** | Cambios en la interfaz de usuario o experiencia del usuario. |
