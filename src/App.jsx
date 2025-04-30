@@ -1,10 +1,12 @@
-import Router from "./routes/Router";
-
 function App() {
 
     return (
-        <Router />
+        <div className="font-roboto">
+            <Router />
+        </div>
     )
 }
+
+import Router from "./routes/Router";
 
 export default App

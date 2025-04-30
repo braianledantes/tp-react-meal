@@ -9,25 +9,8 @@
     --color-goldenSugar: #d68c3c;
     --color-softAlmond: #d9ad79;
     --color-sweetPeach: #fcc5734f;
-}
 
-body {
-    font-family: "Roboto", sans-serif;
-}
-
-.pinyon-script-regular {
-    font-family: "Pinyon Script", cursive;
-    font-weight: 500;
-    font-style: normal;
-    letter-spacing: 3px;
-}
-
-.nunito-sans{
-    font-family: "Nunito Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style:normal;
-    font-variation-settings:
-      "wdth" 100,
-      "YTLC" 500;
+    --font-roboto: "Roboto", sans-serif;
+    --font-pinyon: "Pinyon Script", cursive;
+    --font-nunito: "Nunito Sans", sans-serif;
 }
