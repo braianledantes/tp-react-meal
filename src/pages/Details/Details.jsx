@@ -1,9 +1,9 @@
-import { useParams } from 'react-router'
+import {useParams} from 'react-router'
 import useMeal from '../../hooks/useMeal'
 import useFavorites from '../../hooks/useFavorites';
 import CircleProgressBar from '../../components/CircleProgressBar/CircleProgressBar';
 import FavButton from '../../components/FavButton/FavButton';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 
 export default function Details() {
     const { t } = useTranslation()

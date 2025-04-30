@@ -1,16 +1,6 @@
-import useFavorites from "../../hooks/useFavorites";
 import MealCard from "../MealCard/MealCard";
 
-export default function MealsList({meals}) {
-    const {isFavorite, removeFavorite, addFavorite} = useFavorites();
-
-    const handleClickFavorites = (id) => {
-        if (isFavorite(id)) {
-            removeFavorite(id);
-        } else {
-            addFavorite(id);
-        }
-    }
+export default function MealsList({meals, onChangeFavorites}) {
 
     return (
         <>
@@ -22,8 +12,8 @@ export default function MealsList({meals}) {
                         id={meal.idMeal}
                         image={meal.strMealThumb}
                         title={meal.strMeal}
-                        isFav={isFavorite(meal.idMeal)}
-                        onClickFavorites={handleClickFavorites}
+                        isFav={meal.isFavorite}
+                        onClickFavorites={onChangeFavorites}
                     />
                 ))}
             </div>
