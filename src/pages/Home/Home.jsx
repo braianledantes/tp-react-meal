@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <section>
       <Search searchTerm={searchTerm} onSearch={setSearchTerm} />
-      {loading && <div className="flex justify-center items-center h-full"> <CircleProgressBar /> </div>}
+      {loading && <div className="flex justify-center mt-16"> <CircleProgressBar /> </div>}
       {error && <p>{error.message}</p>}
       {filteredMeals && <MealsList meals={filteredMeals} />}
     </section>

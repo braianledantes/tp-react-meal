@@ -28,7 +28,7 @@ export default function Details() {
     return (
         <section>
             {loading &&
-                <div className='flex justify-center items-center h-full'>
+                <div className='flex justify-center items-center h-full mt-16'>
                     <CircleProgressBar />
                 </div>}
             {error && <h1>{error.message}</h1>}
