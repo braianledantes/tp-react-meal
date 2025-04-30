@@ -13,6 +13,7 @@ const Header = () => {
         <nav >
             <ul className="flex gap-4">
                 <li><Link to={PATHS.FAVORITES}><Heart /></Link></li>
+                <li className="bg-white text-amber-700 px-4 py-2 rounded-full font-medium hover:bg-amber-600 hover:text-white transition-colors duration-300"><Link to={PATHS.HOME}>Idioma</Link></li>
             </ul>
         </nav>
       </header>
