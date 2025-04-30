@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer-honeyRust text-white p-8 flex justify-center items-center gap-3 color-text-softAlmond">
+        <footer className="bg-honeyRust text-softAlmond p-8 flex justify-center items-center gap-3">
             <p>&copy; 2025 Grupo 2, Los Atómicos ⚛️</p>
             <p>
                 <a href="https://github.com/braianledantes/tp-react-meal" target="_blank" rel="noopener noreferrer" className="underline">

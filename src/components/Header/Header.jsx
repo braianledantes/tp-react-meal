@@ -5,7 +5,7 @@ import { Heart } from 'lucide-react';
 
 const Header = () => {
     return (
-      <header className="flex items-center justify-between header-goldenSugar text-white p-4 sticky top-0 z-40 shadow-md">
+      <header className="flex items-center justify-between bg-goldenSugar text-white p-4 sticky top-0 z-40 shadow-md">
         <h1 className="text-3xl font-bold"><Link to={PATHS.HOME}>🍪</Link></h1>
         <div className=" leading-tight">
           <h1 className="nunito-sans text-2xl ml-7" >My Honey</h1>

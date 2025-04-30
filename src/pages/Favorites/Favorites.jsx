@@ -41,7 +41,7 @@ export default function FavoritesPage() {
     }, [favorites]);
 
     return (
-        <section className="bg-sweetPeach min-h-screen -mt-16 p-20">
+        <section className="-mt-16 p-20">
             <h2 className="text-4xl text-center mt-4 font-semibold">{t("favorites-title")}</h2>
             <Search searchTerm={searchTerm} onSearch={setSearchTerm}/>
             {loading && <div className="flex justify-center items-center mt-16"><CircleProgressBar/></div>}
