@@ -41,12 +41,12 @@ export default function FavoritesPage() {
     }, [favorites]);
 
     return (
-        <>
+        <section>
             <h2 className="text-4xl text-center mt-4 font-semibold">{t("favorites-title")}</h2>
             <Search searchTerm={searchTerm} onSearch={setSearchTerm}/>
             {loading && <div className="flex justify-center items-center mt-16"><CircleProgressBar/></div>}
             {error && <p>{error.message}</p>}
             {filteredMeals && <MealsList meals={filteredMeals}/>}
-        </>
+        </section>
     );
 }

@@ -26,7 +26,7 @@ export default function Details() {
     }
 
     return (
-        <>
+        <section>
             {loading &&
                 <div className='flex justify-center items-center h-full'>
                     <CircleProgressBar />
@@ -97,6 +97,6 @@ export default function Details() {
                     </div>
                 </div>
             )}
-        </>
+        </section>
     )
 }
