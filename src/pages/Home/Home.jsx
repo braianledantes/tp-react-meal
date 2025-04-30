@@ -12,10 +12,10 @@ export default function Home() {
   );
 
   return (
-    <div>
+    <>
       {loading && <div className="flex justify-center items-center h-full"> <CircleProgressBar /> </div>}
       {error && <p>{error.message}</p>}
-      {filteredMeals && <MealsList meals={filteredMeals} />}
-    </div>
+      {!loading && filteredMeals && <MealsList meals={filteredMeals} />}
+    </>
   )
 }
