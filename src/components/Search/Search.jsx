@@ -2,13 +2,11 @@ import { useTranslation } from 'react-i18next';
 import styles from './Search.module.css';
 import { Search as SearchIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { useSearch } from "../../context/SearchContext"
 
-export default function Search() {
+export default function Search({ searchTerm, onSearch }) {
 
   const { t } = useTranslation();
   
-  const { searchTerm, setSearchTerm } = useSearch();
   const [inputValue, setInputValue] = useState(searchTerm);  
 
   useEffect(() => {
@@ -17,7 +15,7 @@ export default function Search() {
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
-    setSearchTerm(e.target.value);  
+    onSearch(e.target.value);  
   };
   return (
     <div className={styles.buscadorContenedor}  >
