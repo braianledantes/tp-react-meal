@@ -1,4 +1,3 @@
-import { Heart } from 'lucide-react';
 import React from 'react';
 import { Link } from 'react-router';
 import FavButton from '../FavButton/FavButton';

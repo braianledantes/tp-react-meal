@@ -36,7 +36,7 @@ export default function Home() {
     <section>
       <Search searchTerm={searchTerm} onSearch={setSearchTerm} />
       {loading && <div className="flex justify-center mt-16"> <CircleProgressBar /> </div>}
-      {error && <p>{error.message}</p>}
+      {error && <p className="flex justify-center mt-8 text-red-500">{error.message}</p>}
       {mealsToShow && <MealsList meals={mealsToShow} onChangeFavorites={handleClickFavorites} />}
     </section>
   )
