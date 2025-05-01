@@ -38,7 +38,7 @@ export default function Home() {
     <section>
       <Search searchTerm={searchTerm} onSearch={setSearchTerm} />
       {loading && <div className="flex justify-center mt-16"> <CircleProgressBar /> </div>}
-      {error && <p className="flex justify-center mt-8 text-red-500">{error.message}</p>}
+      {error && <p className="flex justify-center mt-8 text-red-500">{error.message}</p>}   
       {!loading && mealsToShow.length === 0 && (
         <p className="text-center text-cocoa ml-2">{t("no-results")}</p>
       )}
