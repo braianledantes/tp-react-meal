@@ -9,7 +9,7 @@ const Header = () => {
   const { t, i18n } = useTranslation();
 
   const handleLanguageChange = (selectedLanguage) => {
-    i18n.changeLanguage(selectedLanguage); 
+    i18n.changeLanguage(selectedLanguage);
   };
 
 
@@ -17,8 +17,10 @@ const Header = () => {
     <header className="flex items-center justify-between bg-goldenSugar text-white p-4 sticky top-0 z-40 shadow-md">
         <h1 className="text-3xl font-bold"><Link to={PATHS.HOME}><img src="/medialuna.png" alt="Logo" className="w-10 h-10 object-contain" /></Link></h1>
         <div className=" leading-tight">
-          <h1 className="font-nunito font-bold text-2xl ml-5" >My Honey</h1>
-          <h1 className="font-pinyon text-4xl tracking-widest">Bakery </h1>
+          <Link to={PATHS.HOME} >
+            <h1 className="font-nunito font-bold text-2xl ml-5" >My Honey</h1>
+            <h1 className="font-pinyon text-4xl tracking-widest">Bakery </h1>
+          </Link>
         </div>
         <nav className="flex items-center gap-4">
           <Link to={PATHS.FAVORITES}><Heart /></Link>
@@ -39,5 +41,5 @@ const Header = () => {
       </header>
     );
   };
-  
+
 export default Header;
