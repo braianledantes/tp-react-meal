@@ -12,6 +12,7 @@ export default function FavoritesPage() {
     const [searchTerm, setSearchTerm] = useState("");
     const {favorites, loading, removeFavorite, addFavorite, isFavorite} = useFavorites();
     const [meals, setMeals] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const handleClickFavorites = (id) => {
         if (isFavorite(id)) {
@@ -23,6 +24,7 @@ export default function FavoritesPage() {
 
     useEffect(() => {
         const fetchMeals = async () => {
+            setIsLoading(true);
             const mealsData = await Promise.all(favorites.map(id => getMealById(id)));
             const mealsWithFavorites = mealsData.map((meal) => {
                 return {
@@ -31,16 +33,26 @@ export default function FavoritesPage() {
                 }
             })
             setMeals(mealsWithFavorites);
+            setIsLoading(false);
         }
         fetchMeals();
-    }, [favorites, searchTerm])
+    }, [favorites])
+
+    const filteredMeals = meals.filter((meal) =>
+        meal.strMeal.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <section className="-mt-16 p-20">
             <h2 className="text-4xl text-center mt-4 font-semibold">{t("favorites-title")}</h2>
-            <Search searchTerm={searchTerm} onSearch={setSearchTerm}/>
-            {loading && <div className="flex justify-center items-center mt-16"><CircleProgressBar/></div>}
-            {meals && <MealsList meals={meals} onChangeFavorites={handleClickFavorites}/>}
+            <Search searchTerm={searchTerm} onSearch={setSearchTerm} noResults={filteredMeals.length === 0 && !isLoading} />
+            {isLoading && <div className="flex justify-center items-center mt-16"><CircleProgressBar /></div>}
+            {!isLoading && filteredMeals.length === 0 && (
+                <p className="text-center text-cocoa ml-2">{t("no-results")}</p>
+            )}
+            {filteredMeals.length > 0 && (
+                <MealsList meals={filteredMeals} onChangeFavorites={handleClickFavorites} />
+            )}
         </section>
     );
 }
