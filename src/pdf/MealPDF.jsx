@@ -4,7 +4,7 @@ import styles from './mealpdfstyles'; // Importa los estilos
 
 Font.register({
     family: 'Pinyon Script',
-    src: '/src/assets/fonts/PinyonScript-Regular.ttf'
+    src: '/fonts/PinyonScript-Regular.ttf'
 });
 
 const MealDetailPDF = ({ meal }) => {
