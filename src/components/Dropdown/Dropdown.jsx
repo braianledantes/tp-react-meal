@@ -34,6 +34,8 @@ export default function Dropdown({ id, label, value, options, defaultOption, onC
         type="button"
         onClick={toggleDropdown}
         className="flex items-center justify-center w-full bg-transparent border-none shadow-none focus:outline-none"
+        aria-haspopup="true"
+        aria-expanded={visible}
       >
         {value
           ? isObjOptions

@@ -3,10 +3,18 @@ import { Link } from 'react-router';
 import PATHS from '../../routes/paths';
 import { Heart, Languages} from 'lucide-react';
 import Dropdown from '../Dropdown/Dropdown';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
-    return (
-      <header className="flex items-center justify-between bg-goldenSugar text-white p-4 sticky top-0 z-40 shadow-md">
+  const { i18n } = useTranslation(); 
+
+  const handleLanguageChange = (selectedLanguage) => {
+    i18n.changeLanguage(selectedLanguage); 
+  };
+
+
+  return (
+    <header className="flex items-center justify-between bg-goldenSugar text-white p-4 sticky top-0 z-40 shadow-md">
         <h1 className="text-3xl font-bold"><Link to={PATHS.HOME}>🍪</Link></h1>
         <div className=" leading-tight">
           <h1 className="font-nunito font-bold text-2xl ml-5" >My Honey</h1>
@@ -24,7 +32,7 @@ const Header = () => {
               { label: 'Español', value: 'es' },
               { label: 'English', value: 'en' },
             ]}
-            onChange={() => {}}
+            onChange={handleLanguageChange}
             className="bg-transparent text-black p-0 m-0"
           />
         </nav>
