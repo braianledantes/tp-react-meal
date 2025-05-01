@@ -8,5 +8,7 @@ function App() {
 }
 
 import Router from "./routes/Router";
+import { Buffer } from 'buffer';
+window.Buffer = Buffer;
 
 export default App

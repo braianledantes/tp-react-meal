@@ -1,5 +1,7 @@
 import FavButton from '../FavButton/FavButton';
 import { useTranslation } from 'react-i18next';
+import MealDetailPDF from '../../pdf/MealPDF';
+import { PDFDownloadLink } from "@react-pdf/renderer";
 
 export default function MealDetail({ meal, isFav, onFavoriteClick }) {
     const { t } = useTranslation();
@@ -26,8 +28,18 @@ export default function MealDetail({ meal, isFav, onFavoriteClick }) {
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                 ></iframe>
+
                 <div className='flex justify-between items-center p-5 gap-4'>
-                    <h1>Descargar PDF de instrucciones!</h1>
+                    <PDFDownloadLink
+                        document={<MealDetailPDF meal={meal} isFav={isFav} onFavoriteClick={onFavoriteClick} />}
+                        fileName={`${meal.strMeal} - recipe.pdf`}>
+                        {({ loading }) => (
+                            <button className="px-8 py-2 bg-transparent border-2 border-softAlmond  text-black rounded-full hover:bg-softAlmond hover:border-softAlmond hover:text-white transition-all cursor-pointer">
+                        {loading ? "Generando PDF..." : "Descargar PDF de instrucciones!"}
+                             </button>
+                        )}
+                    </PDFDownloadLink>
+
                     <FavButton isFav={isFav} onClick={onFavoriteClick} />
                 </div>
                 <hr className="text-softAlmond"></hr>
