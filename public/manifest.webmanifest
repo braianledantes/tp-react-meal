@@ -1,0 +1,21 @@
+{
+    "name": "My Honey Bakery",
+    "short_name": "Bakery",
+    "icons": [
+      {
+        "src": "/medialuna.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/medialuna.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff"
+  }
+  

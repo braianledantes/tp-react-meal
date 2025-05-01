@@ -43,7 +43,7 @@ export default function FavoritesPage() {
     );
 
     return (
-        <section className="-mt-16 p-20">
+        <section>
             <h2 className="text-4xl text-center mt-4 font-semibold">{t("favorites-title")}</h2>
             <Search searchTerm={searchTerm} onSearch={setSearchTerm} noResults={filteredMeals.length === 0 && !isLoading} />
             {isLoading && <div className="flex justify-center items-center mt-16"><CircleProgressBar /></div>}
