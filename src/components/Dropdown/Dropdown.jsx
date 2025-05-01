@@ -4,26 +4,14 @@ export default function Dropdown({ id, label, value, options, defaultOption, onC
 
   const [internalOpen, setInternalOpen] = useState(false);
   const visible = typeof isOpen === 'boolean' ? isOpen : internalOpen;
-
-  useEffect(() => {
-    if (typeof isOpen !== 'boolean') setInternalOpen(false);
-  }, [value]);
-
+  
   const handleSelect = (val) => {
     onChange(val);
-    if (setOpenDropdown) {
-      setOpenDropdown(null);
-    } else {
-      setInternalOpen(false);
-    }
+    setInternalOpen(false); 
   };
 
   const toggleDropdown = () => {
-    if (setOpenDropdown) {
-      setOpenDropdown(visible ? null : id);
-    } else {
-      setInternalOpen((prev) => !prev);
-    }
+    setInternalOpen((prev) => !prev); 
   };
 
   const isObjOptions = typeof options[0] === 'object';
@@ -54,7 +42,7 @@ export default function Dropdown({ id, label, value, options, defaultOption, onC
         {options.map((option, idx) => (
           <li
             key={idx}
-            className="px-4 py-2 bg-white text-black hover:bg-gray-100 cursor-pointer"
+            className="px-4 py-2 bg-white text-black hover:bg-[#d9ad794D] hover:text-[#a0552c] cursor-pointer"
             onClick={() => handleSelect(isObjOptions ? option.value : option)}
           >
             {isObjOptions ? option.label : option}

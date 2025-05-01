@@ -6,7 +6,7 @@ import Dropdown from '../Dropdown/Dropdown';
 import { useTranslation } from 'react-i18next';
 
 const Header = () => {
-  const { i18n } = useTranslation(); 
+  const { t, i18n } = useTranslation();
 
   const handleLanguageChange = (selectedLanguage) => {
     i18n.changeLanguage(selectedLanguage); 
@@ -27,10 +27,10 @@ const Header = () => {
             id="lang"
             label="Language"
             value=""
-            defaultOption={<Languages className="w-5 h-5 text-white" />}
+            defaultOption={<Languages className="w-5 h-5" color={i18n.language === "en" ? "#a0552c" : "white"} />}
             options={[
-              { label: 'Español', value: 'es' },
-              { label: 'English', value: 'en' },
+              { label: t("lang-spanish"), value: "es" },
+              { label: t("lang-english"), value: "en" },
             ]}
             onChange={handleLanguageChange}
             className="bg-transparent text-black p-0 m-0"
@@ -40,4 +40,4 @@ const Header = () => {
     );
   };
   
-  export default Header;
+export default Header;

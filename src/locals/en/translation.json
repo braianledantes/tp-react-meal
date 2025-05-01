@@ -4,5 +4,13 @@
     "instructions-title": "Instructions",
     "ingredients-title": "Ingredients",
     "measures-title": "Measures",
-    "favorites-title": "Favorites"
+    "favorites-title": "Favorites",
+    "download-pdf": "Download recipe PDF!",
+    "generating-pdf": "Generating PDF...",
+    "lang-spanish": "Spanish",
+    "lang-english": "English",
+    "footer": {
+        "policies": "The Recipe for Success",
+        "group": "Group #2"
+    }
 }

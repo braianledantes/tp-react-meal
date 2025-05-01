@@ -5,5 +5,13 @@
     "ingredients-title": "Ingredientes",
     "measures-title": "Medidas",
     "remove-favorite-btn": "Quitar Favorito",
-    "favorites-title": "Favoritos"
+    "favorites-title": "Favoritos",
+    "download-pdf": "Descargar PDF de Instrucciones!",
+    "generating-pdf": "Generando PDF...",
+    "lang-spanish": "Español",
+    "lang-english": "Ingles",
+    "footer": {
+        "policies": "La Receta del Éxito",
+        "group": "Grupo #2"
+    }
 }

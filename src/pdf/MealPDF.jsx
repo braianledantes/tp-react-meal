@@ -7,8 +7,7 @@ Font.register({
     src: '/fonts/PinyonScript-Regular.ttf'
 });
 
-const MealDetailPDF = ({ meal }) => {
-  const { t } = useTranslation();
+const MealDetailPDF = ({ meal,t }) => {
 
   const renderList = (base, count = 20) =>
     Array.from({ length: count }, (_, i) => base + (i + 1))

@@ -31,11 +31,11 @@ export default function MealDetail({ meal, isFav, onFavoriteClick }) {
 
                 <div className='flex justify-between items-center p-5 gap-4'>
                     <PDFDownloadLink
-                        document={<MealDetailPDF meal={meal} isFav={isFav} onFavoriteClick={onFavoriteClick} />}
+                        document={<MealDetailPDF meal={meal} isFav={isFav} onFavoriteClick={onFavoriteClick} t={t} />}
                         fileName={`${meal.strMeal} - recipe.pdf`}>
                         {({ loading }) => (
-                            <button className="px-8 py-2 bg-transparent border-2 border-softAlmond  text-black rounded-full hover:bg-softAlmond hover:border-softAlmond hover:text-white transition-all cursor-pointer">
-                        {loading ? "Generando PDF..." : "Descargar PDF de instrucciones!"}
+                            <button className="px-8 py-2 bg-transparent border-2 border-softAlmond  text-black rounded-full hover:bg-softAlmond hover:border-softAlmond hover:text-white transition-all cursor-pointer shadow-sm">
+                        {loading ? t("generating-pdf") : t("download-pdf")}
                              </button>
                         )}
                     </PDFDownloadLink>
