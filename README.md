@@ -10,8 +10,8 @@
  - **Clara Pelozo** - Legajo FAI-4938 - mail: clara.pelozo@est.fi.uncoma.edu.ar - Github: ClariMel1
  - **Luciana Romano** - Legajo FAI-3075 - mail: luciana.romano@est.fi.uncoma.edu.ar - Github: Lucianaromano
 
-## My honey BAKERY : Es una aplicación de comidas, donde permite visualizar las recetas y descargarlas en formato PDF. 
-Además permite agregar recetas a favoritos, y buscarlas por nombre.
+## My honey BAKERY : 
+Es una aplicación de comidas, donde permite visualizar las recetas y descargarlas en formato PDF. Además permite agregar recetas a favoritos, y buscarlas por nombre.
 
 ## Guia de instalación:
 
