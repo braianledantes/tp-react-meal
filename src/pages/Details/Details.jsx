@@ -4,7 +4,8 @@ import useFavorites from '../../hooks/useFavorites';
 import CircleProgressBar from '../../components/CircleProgressBar/CircleProgressBar';
 import { useTranslation } from 'react-i18next';
 import MealDetail from '../../components/MealDetail/MealDetail';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
+import PATHS from "../../routes/paths.js";
 
 export default function Details() {
     const { t } = useTranslation();
@@ -23,7 +24,7 @@ export default function Details() {
 
     if (!loading && error && error.message === 'Meal not found') {
         console.log("Redirigiendo a /error");
-        navigate(PATHS.ERROR); 
+        navigate(PATHS.ERROR);
         return null;
     }
 
