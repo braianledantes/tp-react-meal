@@ -9,9 +9,10 @@ import { useTranslation } from "react-i18next";
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const { favorites, removeFavorite, addFavorite, isFavorite } = useFavorites();
+  const { meals, loading, error } = useMeals();
   const [mealsToShow, setMealsToShow] = useState([]);
   const { t } = useTranslation();
-  
+
   const handleClickFavorites = (id) => {
     if (isFavorite(id)) {
       removeFavorite(id);
@@ -19,7 +20,6 @@ export default function Home() {
       addFavorite(id);
     }
   }
-  const { meals, loading, error } = useMeals();
 
   useEffect(() => {
     const filteredMeals = meals.filter((meal) => {
