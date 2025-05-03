@@ -1,5 +1,4 @@
-import { Document, Page, Text, View, Image, Font} from "@react-pdf/renderer";
-import { useTranslation } from 'react-i18next';
+import {Document, Font, Image, Page, Text, View} from "@react-pdf/renderer";
 import styles from './mealpdfstyles'; // Importa los estilos
 
 Font.register({
