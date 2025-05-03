@@ -1,14 +1,11 @@
-import { useParams } from 'react-router';
+import {useNavigate, useParams} from 'react-router';
 import useMeal from '../../hooks/useMeal';
 import useFavorites from '../../hooks/useFavorites';
 import CircleProgressBar from '../../components/CircleProgressBar/CircleProgressBar';
-import { useTranslation } from 'react-i18next';
 import MealDetail from '../../components/MealDetail/MealDetail';
-import { useNavigate } from 'react-router';
 import PATHS from "../../routes/paths.js";
 
 export default function Details() {
-    const { t } = useTranslation();
     const { id } = useParams();
     const navigate = useNavigate();
     const { meal, loading, error } = useMeal({ id });
@@ -23,7 +20,6 @@ export default function Details() {
     };
 
     if (!loading && error && error.message === 'Meal not found') {
-        console.log("Redirigiendo a /error");
         navigate(PATHS.ERROR);
         return null;
     }
