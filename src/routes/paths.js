@@ -2,7 +2,7 @@ const PATHS = {
     HOME: "/",
     FAVORITES: "/favorites",
     DETAILS: "/details/:id",
-    ERROR:"/error",
+    ERROR: "/error",
     getDetailsUrl(id) {
         return this.DETAILS.replace(':id', id);
     }
