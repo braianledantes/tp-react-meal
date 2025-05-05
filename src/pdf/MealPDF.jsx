@@ -1,5 +1,4 @@
-import { Document, Page, Text, View, Image, Font} from "@react-pdf/renderer";
-import { useTranslation } from 'react-i18next';
+import {Document, Font, Image, Page, Text, View} from "@react-pdf/renderer";
 import styles from './mealpdfstyles'; // Importa los estilos
 
 Font.register({
@@ -14,7 +13,7 @@ const MealDetailPDF = ({ meal,t }) => {
       .map(key => meal?.[key]?.trim())
       .filter(item => item && item !== "");
 
-  const mealImage = meal?.strMealThumb || ''; 
+  const mealImage = meal?.image || '';
 
   return (
     <Document>
@@ -27,7 +26,7 @@ const MealDetailPDF = ({ meal,t }) => {
 
         {/* Título de la receta */}
         <View style={styles.section}>
-          <Text style={styles.title}>{meal.strMeal}!</Text>
+          <Text style={styles.title}>{meal.name}!</Text>
         </View>
 
         {/* Imagen de la receta */}
@@ -39,7 +38,7 @@ const MealDetailPDF = ({ meal,t }) => {
 
         <View style={styles.section}>
           <Text style={styles.subtitle}>{t("instructions-title")}</Text>
-          <Text style={styles.instructions}>{meal.strInstructions}</Text>
+          <Text style={styles.instructions}>{meal.instructions}</Text>
         </View>
 
         {/* Dividir Medidas y Ingredientes en dos columnas (Medidas primero) */}
@@ -48,7 +47,7 @@ const MealDetailPDF = ({ meal,t }) => {
           <View style={[styles.column, { flex: 1, paddingRight: 10}]}>
             <Text style={styles.subtitleMeasures}>{t("measures-title")}</Text>
             <View style={styles.list}>
-              {renderList("strMeasure").map((measure, index) => (
+              {meal.measures.map((measure, index) => (
                 <Text key={index} style={styles.measures}>
                   {measure}
                 </Text>
@@ -60,7 +59,7 @@ const MealDetailPDF = ({ meal,t }) => {
           <View style={[styles.column, { flex: 1 }]}>
             <Text style={styles.subtitle}>{t("ingredients-title")}</Text>
             <View style={styles.list}>
-              {renderList("strIngredient").map((ingredient, index) => (
+              {meal.ingredients.map((ingredient, index) => (
                 <Text key={index} style={styles.listItem}>
                   {ingredient}
                 </Text>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getMealsByCategory, searchMealsByName } from '../api/mealApi';
+import { getDessertMeals } from '../api/mealApi';
 
 const useMeals = () => {
     const [meals, setMeals] = useState([]);
@@ -10,7 +10,7 @@ const useMeals = () => {
         const fetchDesserts = async () => {
           setLoading(true);
           try {
-            const data = await getMealsByCategory("Dessert");
+            const data = await getDessertMeals();
             setMeals(data);
           } catch (err) {
             setError(err);

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Link } from "react-router";
+=======
+import {Link} from "react-router";
+>>>>>>> 02d36b6687e245006423659ca97a7bdabb3f1dcb
 
 export default function Error() {
     console.log("404 - Página no encontrada");

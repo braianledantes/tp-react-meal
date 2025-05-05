@@ -9,9 +9,10 @@ import { useTranslation } from "react-i18next";
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const { favorites, removeFavorite, addFavorite, isFavorite } = useFavorites();
+  const { meals, loading, error } = useMeals();
   const [mealsToShow, setMealsToShow] = useState([]);
   const { t } = useTranslation();
-  
+
   const handleClickFavorites = (id) => {
     if (isFavorite(id)) {
       removeFavorite(id);
@@ -19,18 +20,15 @@ export default function Home() {
       addFavorite(id);
     }
   }
-  const { meals, loading, error } = useMeals();
 
   useEffect(() => {
     const filteredMeals = meals.filter((meal) => {
-      return meal.strMeal.toLowerCase().includes(searchTerm.toLowerCase());
+      return meal.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
-    const mealsWithFavorites = filteredMeals.map((meal) => {
-        return {
-            ...meal,
-            isFavorite: isFavorite(meal.idMeal),
-        }
-    })
+    const mealsWithFavorites = filteredMeals.map((meal) => ({
+      ...meal,
+      isFavorite: favorites.includes(meal.id),
+    }))
     setMealsToShow(mealsWithFavorites);
   }, [meals, searchTerm, favorites]);
 
@@ -38,7 +36,7 @@ export default function Home() {
     <section>
       <Search searchTerm={searchTerm} onSearch={setSearchTerm} />
       {loading && <div className="flex justify-center mt-16"> <CircleProgressBar /> </div>}
-      {error && <p className="flex justify-center mt-8 text-red-500">{error.message}</p>}   
+      {error && <p className="flex justify-center mt-8 text-red-500">{error.message}</p>}
       {!loading && mealsToShow.length === 0 && (
         <p className="text-center text-cocoa ml-2">{t("no-results")}</p>
       )}
