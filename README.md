@@ -35,7 +35,7 @@ Iniciamos el servidor de desarrollo con el siguiente comando:
  ![Ejecutamos](https://github.com/braianledantes/tp-react-meal/blob/main/src/assets/guia/ejecutamos.png)
   
  
- -**6.** Visitamos la pagina.
+ - **6.** Visitamos la pagina.
 Visitamos la URL en el navegador de preferencia.
    
  ![Aplicacion](https://github.com/braianledantes/tp-react-meal/blob/main/src/assets/guia/pagina.png)
