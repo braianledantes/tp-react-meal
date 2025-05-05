@@ -18,27 +18,27 @@ Es una aplicación de comidas, donde permite visualizar las recetas y descargarl
 
 ![ClonarRepo](https://github.com/braianledantes/tp-react-meal/blob/main/src/assets/guia/clonaRepo.png)
 
-- **2** Abrimos la carpeta.
+- **2.** Abrimos la carpeta.
 
   ![AbrirCarpeta](https://github.com/braianledantes/tp-react-meal/blob/main/src/assets/guia/abrimosCarpeta.png)
   
-- **3.** Instalar Node.js.
+- **3** Instalar Node.js.
   ![Node.js](https://github.com/braianledantes/tp-react-meal/blob/main/src/assets/guia/instalamos%20node.js.png)
 
-- **4** Instalamos dependencias.
+- **4.** Instalamos dependencias.
 
-  ![Dependencias](https://github.com/braianledantes/tp-react-meal/blob/main/src/assets/guia/instalamosDep.png)
+ ![Dependencias](https://github.com/braianledantes/tp-react-meal/blob/main/src/assets/guia/instalamosDep.png)
 
--**5** Ejecutamos la aplicación.
+- **5.** Ejecutamos la aplicación.
 Iniciamos el servidor de desarrollo con el siguiente comando:
 
-![Ejecutamos](https://github.com/braianledantes/tp-react-meal/blob/main/src/assets/guia/ejecutamos.png)
+ ![Ejecutamos](https://github.com/braianledantes/tp-react-meal/blob/main/src/assets/guia/ejecutamos.png)
   
  
- -**6** Visitamos la pagina.
+ -**6.** Visitamos la pagina.
 Visitamos la URL en el navegador de preferencia.
    
- ![Aplicacion] (https://github.com/braianledantes/tp-react-meal/blob/main/src/assets/guia/pagina.png)
+ ![Aplicacion](https://github.com/braianledantes/tp-react-meal/blob/main/src/assets/guia/pagina.png)
 
 
 ## Esquema de íconos para los commits
